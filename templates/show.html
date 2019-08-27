@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block mainbody %}
+    {% for row in data %}
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ row.img }}" alt="the author" class="img-thumbnail">
+            </div>
+            <div class="col-md-6">
+                <samp>{{ row.content }}}</samp>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
