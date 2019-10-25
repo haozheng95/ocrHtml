@@ -3,7 +3,7 @@
 import os
 import sys
 
-from aiapp.chinese_ocr.export import export
+# from aiapp.chinese_ocr.export import export
 
 
 def main():
@@ -17,11 +17,11 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
-    demo_path = os.path.dirname(os.path.abspath(__file__))
-    image_files = os.path.join(demo_path, "demo.jpg")
-    export(image_files,
-           os.path.join(demo_path, "aiapp"),
-           os.path.join(demo_path, "demo.txt"))
+    # demo_path = os.path.dirname(os.path.abspath(__file__))
+    # image_files = os.path.join(demo_path, "demo.jpg")
+    # export(image_files,
+    #        os.path.join(demo_path, "aiapp"),
+    #        os.path.join(demo_path, "demo.txt"))
     execute_from_command_line(sys.argv)
 
 

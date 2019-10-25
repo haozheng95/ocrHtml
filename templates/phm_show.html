@@ -1,0 +1,424 @@
+{% extends "main.html" %}
+{% block mainbody %}
+    <p>前提：数据已按要求格式整理好。
+        <style>
+            img {
+                width: 60%;
+                padding-left: 0%;
+            }
+        </style>
+    </p>
+
+    <h2>Basic</h2>
+
+    <ol>
+        <li><p>Understand the problem:</p>
+
+            <ul>
+                <li>Classification: Show value count of categorical value. <br>
+                    <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+                </li>
+                <li><p>Regression:</p>
+
+                    <ul>
+                        <li><p>descriptive statistics summary</p>
+
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Name: F_z</th>
+                                    <th style="text-align: right">dtype: float64</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>count</td>
+                                    <td style="text-align: right">1320.000000</td>
+                                </tr>
+                                <tr>
+                                    <td>mean</td>
+                                    <td style="text-align: right">-2.345455</td>
+                                </tr>
+                                <tr>
+                                    <td>std</td>
+                                    <td style="text-align: right">50.367960</td>
+                                </tr>
+                                <tr>
+                                    <td>min</td>
+                                    <td style="text-align: right">-260.000000</td>
+                                </tr>
+                                <tr>
+                                    <td>25%</td>
+                                    <td style="text-align: right">-4.000000</td>
+                                </tr>
+                                <tr>
+                                    <td>50%</td>
+                                    <td style="text-align: right">-1.000000</td>
+                                </tr>
+                                <tr>
+                                    <td>75%</td>
+                                    <td style="text-align: right">3.000000</td>
+                                </tr>
+                                <tr>
+                                    <td>max</td>
+                                    <td style="text-align: right">342.000000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li><p>Histogram (value, percentile)<br>
+                            TODO1: 加一些常见分布的特性介绍，便于理解。<br>
+                            TODO2: 分析当前直方图可用何种分布拟合，置信度。<br>
+                            <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                        </li>
+                        <li><p>Skewness and Kurtosis</p></li>
+                    </ul>
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th style="text-align: right"></th>
+                            <th style="text-align: left"></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>Skewness</td>
+                            <td style="text-align: right">1.065431</td>
+                            <td style="text-align: left">Skewness is a measure of the asymmetry of the probability
+                                distribution of a real-valued random variable about its mean.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kurtosis</td>
+                            <td style="text-align: right">23.187247</td>
+                            <td style="text-align: left">Kurtosis is a measure of whether the data are heavy-tailed or
+                                light-tailed relative to a normal distribution. That is, data sets with high kurtosis
+                                tend to have heavy tails, or outliers. Data sets with low kurtosis tend to have light
+                                tails, or lack of outliers. A uniform distribution would be the extreme case
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p>TODO: 进一步解释Skewness和Kurtosis。</p></li>
+            </ul>
+        </li>
+        <li><p>Series Basic （怎么选取series作此步分析暂时未定，可考虑随机选取，或按照feature importance选取有代表性地向用户展示）</p>
+
+            <ul>
+                <li>descriptive statistics summary (Count, Mean, STD, MIN, 25%, 50%, 75%, MAX)</li>
+            </ul>
+        </li>
+    </ol>
+
+    <p>方法同上，不赘述。</p>
+
+    <ul>
+        <li><p>Line chart (time, value)</p>
+            <div id="linechart_material" style="width: 900px; height: 500px"></div>
+        </li>
+        <li><p>Skewness and Kurtosis</p></li>
+    </ul>
+
+    <p>方法同上，不赘述。</p>
+
+    <ul>
+        <li>Rolling Statistics: mean, std.<br>
+            <div id="linechart_material_2" style="width: 900px; height: 500px"></div></li>
+    </ul>
+
+    <p>Rolling means (or moving averages) are generally used to smooth out short-term fluctuations in time series data
+        and highlight long-term trends.</p>
+
+    <p>TODO: 加上Rolling std的介绍。</p>
+
+    <ul>
+        <li>Decomposition into Trend, seasonality and residuals<br>
+            <div id="linechart_material_3" style="width: 900px; height: 500px"></div>
+        </li>
+    </ul>
+
+    <p>TODO: 加上注释。</p>
+
+    <ol>
+        <li><p>Feature(variable) relationship analysis</p>
+
+            <p><em>If it&#39;s a classification problem, need to analysis the relationship within different</em>
+                <strong>class</strong> <em>.</em></p>
+
+            <ul>
+                <li><p>Basic</p>
+
+                    <p>TODO: 注释。</p>
+
+                    <ul>
+                        <li><p>Numeric (Linear)</p><br>
+                            <div id="scatter_chart" style="width: 900px; height: 500px;"></div>
+                        </li>
+                        <li><p>Category (Box)</p></li>
+                    </ul>
+                </li>
+                <li><p>Correlation matrix</p></li>
+            </ul>
+        </li>
+    </ol>
+
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>F_x</th>
+            <th>F_y</th>
+            <th>F_z</th>
+            <th>T_x</th>
+            <th>T_y</th>
+            <th>T_z</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>F_x</td>
+            <td>1.000000</td>
+            <td>-0.734562</td>
+            <td>0.220785</td>
+            <td>0.734160</td>
+            <td>0.599033</td>
+            <td>0.084029</td>
+        </tr>
+        <tr>
+            <td>F_y</td>
+            <td>-0.734562</td>
+            <td>1.000000</td>
+            <td>-0.011925</td>
+            <td>-0.972381</td>
+            <td>-0.669026</td>
+            <td>-0.607716</td>
+        </tr>
+        <tr>
+            <td>F_z</td>
+            <td>0.220785</td>
+            <td>-0.011925</td>
+            <td>1.000000</td>
+            <td>-0.094079</td>
+            <td>0.304441</td>
+            <td>-0.120590</td>
+        </tr>
+        <tr>
+            <td>T_x</td>
+            <td>0.734160</td>
+            <td>-0.972381</td>
+            <td>-0.094079</td>
+            <td>1.000000</td>
+            <td>0.714075</td>
+            <td>0.522662</td>
+        </tr>
+        <tr>
+            <td>T_y</td>
+            <td>0.599033</td>
+            <td>-0.669026</td>
+            <td>0.304441</td>
+            <td>0.714075</td>
+            <td>1.000000</td>
+            <td>0.195646</td>
+        </tr>
+        <tr>
+            <td>T_z</td>
+            <td>0.084029</td>
+            <td>-0.607716</td>
+            <td>-0.120590</td>
+            <td>0.522662</td>
+            <td>0.195646</td>
+            <td>1.000000</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p><div id="heatmap_div"></div>
+        TODO: 注释。</p>
+
+
+{% endblock %}
+
+{% block js %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages: ["corechart", "line"]});
+        google.charts.setOnLoadCallback(drawChart_1);
+        google.charts.setOnLoadCallback(drawChart_2);
+        google.charts.setOnLoadCallback(drawChart_3);
+        google.charts.setOnLoadCallback(drawChart_4);
+        google.charts.setOnLoadCallback(drawChart_5);
+        google.charts.setOnLoadCallback(drawChart_6);
+
+        function drawChart_1() {
+            var data = google.visualization.arrayToDataTable([
+                ["Element", "Density", {role: "style"}],
+                ["False", 19.30, "gold"],
+                ["True", 21.45, "color: #e5e4e2"]
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options = {
+                title: "Density of Precious Metals, in g/cm^3",
+                width: 600,
+                height: 400,
+                bar: {groupWidth: "95%"},
+                legend: {position: "none"},
+            };
+            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+            chart.draw(view, options);
+        }
+
+        function drawChart_2() {
+            var data = google.visualization.arrayToDataTable([
+                ['point', 'F_x'],
+                ['-200', 0.01,],
+                ['-100', 0.02,],
+                ['0', 0.08,],
+                ['100', 0,],
+                ['200', 0.03,]
+            ]);
+
+            var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: {position: 'bottom'}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+
+        function drawChart_3() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Day');
+            data.addColumn('number', 'Guardians of the Galaxy');
+
+            data.addRows([
+                [16, -1],
+                [17, -0.5],
+                [18, 0],
+                [19, -1.5],
+                [20, -3],
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Box Office Earnings in First Two Weeks of Opening',
+                    subtitle: 'in millions of dollars (USD)'
+                },
+                width: 900,
+                height: 500
+            };
+
+            var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+            chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+        function drawChart_4() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Day');
+            data.addColumn('number', 'mean');
+            data.addColumn('number', 'sd');
+
+            data.addRows([
+                [26, 1, -1],
+                [27, 1.1, -0.7],
+                [28, 1.,-1],
+                [29, 1.2,-1],
+                [30, 1,-1],
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Box Office Earnings in First Two Weeks of Opening',
+                    subtitle: 'in millions of dollars (USD)'
+                },
+                width: 900,
+                height: 500
+            };
+
+            var chart = new google.charts.Line(document.getElementById('linechart_material_2'));
+
+            chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+        function drawChart_5() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'time');
+            data.addColumn('number', 'a');
+            data.addColumn('number', 'b');
+            data.addColumn('number', 'c');
+            data.addColumn('number', 'd');
+
+            data.addRows([
+                [0, -1, -0.5, 0.5, 0],
+                [2, 0, -1, 0, 1],
+                [4, -3,-1, -0.5, 0.8],
+                [6, 0,-1, 0.5, 1],
+                [8, 0,-1, 0, 0.6],
+                [10, -3,-1, -0.5, -1],
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Box Office Earnings in First Two Weeks of Opening',
+                    subtitle: 'in millions of dollars (USD)'
+                },
+                width: 900,
+                height: 500
+            };
+
+            var chart = new google.charts.Line(document.getElementById('linechart_material_3'));
+
+            chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+
+        function drawChart_6() {
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Weight'],
+          [ 8,      12],
+          [ 4,      5.5],
+          [ 11,     14],
+          [ 4,      5],
+          [ 3,      3.5],
+          [ 6.5,    7]
+        ]);
+
+        var options = {
+          title: 'Age vs. Weight comparison',
+          hAxis: {title: 'Age', minValue: 0, maxValue: 15},
+          vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('scatter_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+        var data = [
+            {
+                z: [[1, 20, 30], [20, 1, 60], [30, 60, 1]],
+                type: 'heatmap'
+            }
+        ];
+        Plotly.plot('heatmap_div', data);
+    </script>
+
+{% endblock %}

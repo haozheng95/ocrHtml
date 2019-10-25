@@ -129,10 +129,9 @@ def export(image_file, image_output_file, output_file):
             f.write(result[key][1])
 
 
-
-if __name__ == '__main__':
-    image_files = glob('/Users/yinhaozheng/PycharmProjects/ocrHtml/aiapp/taskFiles/*.*')
-    print(image_files)
-    export(image_files,
-           "/Users/yinhaozheng/PycharmProjects/ocrHtml/aiapp/chinese_ocr/test_result/",
-           "/Users/yinhaozheng/PycharmProjects/ocrHtml/aiapp/chinese_ocr/test_result/test.txt")
+# if __name__ == '__main__':
+#     image_files = glob('/Users/yinhaozheng/PycharmProjects/ocrHtml/aiapp/taskFiles/*.*')
+#     print(image_files)
+#     export(image_files,
+#            "/Users/yinhaozheng/PycharmProjects/ocrHtml/aiapp/chinese_ocr/test_result/",
+#            "/Users/yinhaozheng/PycharmProjects/ocrHtml/aiapp/chinese_ocr/test_result/test.txt")

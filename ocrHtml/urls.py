@@ -23,10 +23,15 @@ Including another URLconf
 
 from django.conf.urls import url
 
-from aiapp.views import index, show, download
+from aiapp.views import index as ocr_index, show as ocr_show, download as ocr_download
+from phm.views import index as phm_index, show as phm_show
 
 urlpatterns = [
-    url('index/', index),
-    url('show/(?P<task_id>.+)/', show),
-    url('download/(?P<task_id>.+)/', download),
+    url('^index/', ocr_index),
+    url('^show/(?P<task_id>.+)/', ocr_show),
+    url('^download/(?P<task_id>.+)/', ocr_download),
+
+
+    url('^phm_index/', phm_index),
+    url('^phm_show/', phm_show),
 ]
